@@ -1,0 +1,13 @@
+
+
+create table project_account(
+account_number integer primary key,
+password varchar(20) not null,
+current_balance float not null,
+applicant_id integer references project_applicant(applicant_id)
+)
+
+
+insert into project_account values(1001,'password@123',1000,101);
+insert into project_account values(1002,'password@123',1000,102);
+insert into project_account values(1003,'password@123',1000,103);
