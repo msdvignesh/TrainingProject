@@ -1,0 +1,80 @@
+package com.sbi.layer2;
+
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="project_applicant")
+public class Applicant {
+	@Id
+	@GeneratedValue
+	private Integer applicantId;
+	private String salutation;
+	private String applicantName;
+	private String applicantFatherName;
+	private LocalDate dob;
+	private Character gender;
+	private String email;
+	private Integer phone;
+	private Integer aadhar;
+	private String pan;
+	private String occupation;
+	private Double annualIncome;
+	private String application_status;
+	private String marital_status;
+	private String address;
+
+	@OneToOne(mappedBy="account_number")
+	Account account;
+	
+	
+	
+
+//	CREATE TABLE PROJECT_APPLICANT(
+//			 APPLICANT_ID             INT CONSTRAINT APP_ID_PK PRIMARY KEY,
+//			 SALUTATION               VARCHAR(10) CONSTRAINT APP_SAL_NOTNUL NOT NULL,
+//			 APPLICANT_NAME           VARCHAR(20) CONSTRAINT APP_NAME_NOTNUL NOT NULL,
+//			 APPLICANT_FATHERNAME     VARCHAR(20) CONSTRAINT APP_FNAME_NOTNUL NOT NULL,
+//			 DOB                      DATE CONSTRAINT APP_CHK_DOB CHECK (DOB < '2004-03-31'),
+//			 GENDER		          CHAR(1) DEFAULT 'F',
+//			 EMAIL		          VARCHAR(20) CONSTRAINT APP_MAIL_UNIQ UNIQUE,
+//			 PHONE		          BIGINT CONSTRAINT APP_PH_UNIQ UNIQUE,
+//			 AADHAR		          BIGINT CONSTRAINT APP_AADHAR_UNIQ UNIQUE,
+//			 PAN	                  VARCHAR(10) CONSTRAINT APP_PAN_UNIQ UNIQUE,
+//			 OCCUPATION               VARCHAR(20) CONSTRAINT APP_OCC_NOTNUL NOT NULL,
+//			 ANNUALINCOME             BIGINT ,
+//			 APPLICATION_STATUS       VARCHAR(20) CONSTRAINT APP_STAT_NOTNUL NOT NULL,
+//			 MARITAL_STATUS           VARCHAR(20) CONSTRAINT APP_MAR_NOTNUL NOT NULL,
+//			 ADDRESS                  VARCHAR(150) CONSTRAINT APP_ADDR_NOTNUL NOT NULL)
+
+}
+
+
+package com.sbi.layer2;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="project_applicant")
+public class Account {
+
+	@Id
+	private Integer account_number;
+	private String password;
+	private Float balance;
+	
+	@OneToOne
+	@JoinColumn(name="applicant_id")
+	Applicant applicant;
+
+}
+
