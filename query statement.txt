@@ -1,0 +1,50 @@
+insert into project_applicant values(
+1001,
+'12234234231',
+'Address2',2000,
+'Applicant Father Name',
+'Applicant 1','Applied',date '2008-03-12','email@gmail.com','M','Unmarried','Professional','AAAAA1234A',
+'9876543219','Mr','/assets/photo2.jpg')
+insert into project_applicant values(
+1002,
+'12234234231',
+'Address2',2000,
+'Applicant Father Name',
+'Applicant 2','Applied',date '1994-03-05','email@gmail.com','M','Unmarried','Professional','AAAAA1234A',
+'9123134212','Mr','/assets/photo2.jpg')
+insert into project_applicant values(
+1002,
+'12312312313',
+'Address3',2000,
+'Applicant Father Name',
+'Applicant 3','Applied',date '1994-03-05','email@gmail.com','M','Unmarried','Professional','AAAAA1224A',
+'1231233444','Mr','/assets/photo3.jpg')
+insert into project_applicant values(
+1003,
+'12342133453',
+'Address2',2000,
+'Applicant 3 Father Name',
+'Applicant 3','Applied',date '1994-05-05','email@gmail.com','M','Unmarried','Professional','AAAAA1254A',
+'912323423','Mrs','/assets/photo3.jpg')
+insert into project_applicant values(
+1004,
+'15634234231',
+'Address4',2000,
+'Applicant 4 Father Name',
+'Applicant 4','Applied',date '1994-03-05','email@gmail.com','M','Unmarried','Professional','AAAAA1234A',
+'132342324','Mr','/assets/photo4.jpg')
+
+
+Account Table
+insert into project_account values(10003,500,'pass@3',1002)
+insert into project_account values(10004,70,'account@123',1003)
+insert into project_account values(10005,10000,'admin@123',1005)
+insert into project_account values(10006,5000,'password@123',1004)
+
+update project_applicant set application_status='Approved' where applicant_id=1001
+update project_applicant set application_status='Approved' where applicant_id=1002
+update project_applicant set application_status='Approved' where applicant_id=1003
+update project_applicant set application_status='Approved' where applicant_id=1004
+
+
+update project_account set balance=4000 where account_number=10003
